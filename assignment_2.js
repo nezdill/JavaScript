@@ -64,14 +64,23 @@ function cntOccurences(str){
   console.log("The result of a's in the string Adrian Tillman was here " + cntOccurences("Adrian Tillman was here"));
 
 function isPrime(n){
-  for (var i = 1; i < n.length - 1; i++){
-    var total = 0;
-    if (i % n === 0){
-      n[i]++;
-      total += n[i];
-    }
-      return n[i];
-  }
+  var factor = 0;
+  var i = 0;
+  var primeList = [];
+    while(i < n.length){
+      for (var x = 0; x < n.length; x++){
+          if(n[i] % n[x] === 0){
+            factor += 1;
+          }
+      }
+      if(factor === 2){
+        primeList.push(n[i]);
+        }
+        i++;
+        factor = 0;
+      }
+      return primeList;
 }
 var n = [1,2,3,5,7,10,12,13,15,20];
-  console.log("The function isPrime ([1,2,3,5,7,10,12,13,15,20]) the only numbers prime are " +isPrime(n));
+
+  console.log("The function isPrime ([1,2,3,5,7,10,12,13,15,20]) the only numbers prime are " + isPrime(n));

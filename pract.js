@@ -16,3 +16,7 @@ var a = 5;
 var b = 6;
 var c = 9;
 console.log((a<b) && (b > c));
+var t = 2;
+if (t === 2){
+  console.log("ok");
+}
